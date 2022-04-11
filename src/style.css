@@ -5,10 +5,13 @@
   border: 1px solid #dadde1;
   border-radius: 5px;
 }
-
 h1 {
   color: #878787;
   font-size: 40px;
   font-weight: 500;
   line-height: 28px;
+}
+ul {
+  list-style: none;
+  text-align: left;
 }
