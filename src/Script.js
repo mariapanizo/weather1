@@ -1,4 +1,5 @@
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -8,7 +9,6 @@ function formatDate(date) {
     minutes = `0${minutes}`;
   }
 
-  let day = days[date.getDay()];
   let days = [
     "Sunday",
     "Monday",
@@ -18,9 +18,10 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
-
+  let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -30,7 +31,7 @@ function formatDay(timestamp) {
 }
 function displayForecast(response){
   let forecast=response.data.daily;
-  let forecastElement=document.querySelector("#forecast");
+  let forecastElement=document.querySelector("#weather-forecast");
 letforecastHTML=`<div class="row">`;
 forecast.forEach(function (forecastDay, index) {
   if (index < 6) {
